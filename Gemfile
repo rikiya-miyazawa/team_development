@@ -60,6 +60,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'letter_opener_web'
   gem 'listen', '~> 3.0.5'
+  gem 'pry-rails'
   gem 'rack-mini-profiler', require: false
   gem 'web-console', '>= 3.3.0'
 end
@@ -74,3 +75,4 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'rubocop', require: false

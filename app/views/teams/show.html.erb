@@ -50,6 +50,11 @@
                           <%= link_to I18n.t('views.button.delete'), team_assign_path(@team, assign), method: :delete, class: 'btn btn-sm btn-danger' %>
                         <% end %>
                       </td>
+                      <td>
+                        <% if @team.owner.email == @user.email %>
+                          <%= link_to I18n.t('views.button.owner'),owner_change_team_path(owner_id: assign.user_id), method: :post, class: 'btn btn-sm btn-primary' %>
+                        <% end %>
+                      </td>
                     </tr>
                   <% end %>
                 </tbody>

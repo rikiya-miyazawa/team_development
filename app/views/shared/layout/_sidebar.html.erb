@@ -36,9 +36,15 @@
                 <%= agenda.title %>
                 <i class="right fa fa-angle-left"></i>
               </p>
-              <p>
-              <%= link_to I18n.t('views.button.delete'), agenda_path(agenda), method: :delete, class: 'btn btn-sm btn-danger' %>
-              </p>
+              <% if @working_team.owner.email == current_user.email %>
+                <p>
+                  <%= link_to I18n.t('views.button.delete'), agenda_path(agenda), method: :delete, class: 'btn btn-sm btn-danger' %>
+                </p>
+              <% elsif agenda.user.email == current_user.email %>
+                <p>
+                <%= link_to I18n.t('views.button.delete'), agenda_path(agenda), method: :delete, class: 'btn btn-sm btn-danger' %>
+                </p>
+              <% end %>
             </a>
             <ul class="nav nav-treeview" style="display: block;">
               <% agenda.articles.each do |article| %>

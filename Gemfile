@@ -48,6 +48,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem "rails-erd"
 end
 
 group :development do
@@ -62,7 +63,6 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'rack-mini-profiler', require: false
   gem 'web-console', '>= 3.3.0'
-  gem "rails-erd"
 end
 
 group :test do

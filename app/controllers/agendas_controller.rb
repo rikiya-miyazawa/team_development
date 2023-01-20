@@ -24,6 +24,7 @@ class AgendasController < ApplicationController
   def destroy
     @agenda = Agenda.find(params[:id])
     @agenda.destroy
+    AgendaMailer.agenda_delete_mail(@agenda.team.users.pluck(:email), @agenda.title).deliver
     redirect_to dashboard_url, notice: I18n.t('views.messages.delete_agenda')
   end
 
